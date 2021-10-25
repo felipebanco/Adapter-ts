@@ -4,8 +4,8 @@ var GmailAdapter = /** @class */ (function () {
     function GmailAdapter(gmail) {
         this.gmail = gmail;
     }
-    GmailAdapter.prototype.send = function (title, message) {
-        this.gmail.sendEmail('Burguer King', title, message);
+    GmailAdapter.prototype.enviar = function (titulo, mensaje) {
+        this.gmail.enviarEmail('Mercado Libre', titulo, mensaje);
     };
     return GmailAdapter;
 }());
