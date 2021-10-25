@@ -1,17 +1,24 @@
-import ServiceEmail from "./services/service-email";
-import Email from "./providers/email";
-import Outlook from "./providers/provider-outlook";
-import Gmail from "./providers/provider-gmail";
-import GmailAdapter from "./providers/adapter-gmail";
+import ServiceEmail from "./servicios/service-email";
+import Email from "./proveedores/email";
+import Outlook from "./proveedores/outlook";
+import Gmail from "./proveedores/gmail";
+import GmailAdapter from "./proveedores/adapter-gmail";
+import YahooAdapter from "./proveedores/adapter-yahoo";
+import Yahoo from "./proveedores/yahoo";
 
-
-const shipments: Email[] = [
+const envios: Email[] = [
     new Outlook(),
     new GmailAdapter(
         new Gmail()
+    ),
+    new YahooAdapter(
+        new Yahoo()
     )
 ];
-const serviceEmail = new ServiceEmail(shipments)
-console.log();
-serviceEmail.send('Trabajo', 'Usted ha sido seleccionado para una entrevista de trabajo')
+
+const serviceEmail = new ServiceEmail(envios);
+
+console.log('---------------');
+serviceEmail.enviar('Asunto: Trabajo', 'Usted ha sido seleccionado para una entrevista de trabajo');
+console.log('---------------');
 

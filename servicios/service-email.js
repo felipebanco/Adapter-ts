@@ -4,11 +4,13 @@ var ServiceEmail = /** @class */ (function () {
     function ServiceEmail(providers) {
         this.providers = providers;
     }
-    ServiceEmail.prototype.send = function (title, message) {
+    ServiceEmail.prototype.enviar = function (titulo, mensaje) {
         this.providers.forEach(function (e) {
-            e.send(title, message);
+            e.enviar(titulo, mensaje);
         });
     };
+    ;
     return ServiceEmail;
 }());
+;
 exports["default"] = ServiceEmail;
