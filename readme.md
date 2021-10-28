@@ -17,12 +17,16 @@ Un usuario necesita enviar un email con un título y cuerpo del mensaje, pero qu
 
 ***Solución:***
 
-1. Crear una interfaz que contenga lo solicitado por el usuario
+1. Crear una interfaz que contenga el método solicitado por el usuario
 
 2. Las clases compatibles deben implementar la interfaz
 
-3. Para las clases incompatibles se debe crear una clase que implemente un objeto adaptador y que a su vez esté vinculado a la interfaz. Una vez hecho esto se puede trabjar con el mismo método.
-4. Luego se crea un objeto de tipo array que itera a todos los proveedores de correo en un bucle.
-5. Por último el array es asisgando a una constante, se crea una nueva instancia para el método requerido y se redacata el cuerpo del mensaje, sin tener que preocuparse por cómo cada proveedor lleva a cabo dicha función.  
+3. Para las clases incompatibles se debe crear una clase que implemente un objeto adaptador en el constructor y que a su vez esté vinculado a la interfaz. Una vez hecho esto se puede trabajar con el mismo método.
+
+4. Exportar a los proveedores en una clase 
+
+5. Luego se crea un objeto de tipo array que itera a todos los proveedores en un bucle.
+
+6. Por último el array es asisgando a una constante, se crea una nueva instancia para cada proveedor, se invoca el método pasando los datos (título-cuerpo del mensaje), sin tener que preocuparse por cómo cada proveedor lleva a cabo dicha función.  
 
 

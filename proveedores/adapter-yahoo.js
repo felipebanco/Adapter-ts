@@ -1,11 +1,13 @@
 "use strict";
 exports.__esModule = true;
 var YahooAdapter = /** @class */ (function () {
-    function YahooAdapter(yahoo) {
+    function YahooAdapter(destinatario, fecha, yahoo) {
         this.yahoo = yahoo;
+        this.destinatario = destinatario;
+        this.fecha = fecha;
     }
     YahooAdapter.prototype.enviar = function (titulo, mensaje) {
-        this.yahoo.enviarCorreo('Juan Ramirez', titulo, mensaje, '25-10-21');
+        this.yahoo.enviarCorreo(this.destinatario, titulo, mensaje, this.fecha);
     };
     ;
     return YahooAdapter;

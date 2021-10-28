@@ -1,10 +1,11 @@
 import Email from "../proveedores/email";
 
-class ServiceEmail {
-    constructor (private providers: Email[]){}
+class ServiceEmail implements Email {
+
+    constructor (private proveedor: Email[]){}
 
     public enviar(titulo: string, mensaje: string): void{
-        this.providers.forEach(e =>{
+        this.proveedor.forEach(e =>{
             e.enviar(titulo,mensaje);
         })
     };

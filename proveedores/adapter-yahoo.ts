@@ -3,10 +3,16 @@ import Yahoo from "./yahoo";
 
 class YahooAdapter implements Email{
 
-    constructor (private yahoo:Yahoo){}
+    destinatario : string;
+    fecha: string;
+
+    constructor (destinatario: string, fecha: string , private yahoo:Yahoo){
+        this.destinatario = destinatario;
+        this.fecha = fecha;
+    }
 
     public enviar(titulo: string, mensaje: string){
-        this.yahoo.enviarCorreo('Juan Ramirez',titulo,mensaje,'25-10-21');
+        this.yahoo.enviarCorreo(this.destinatario,titulo,mensaje,this.fecha);
     };
 
 };

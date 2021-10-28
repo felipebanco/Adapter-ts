@@ -8,10 +8,10 @@ import Yahoo from "./proveedores/yahoo";
 
 const envios: Email[] = [
     new Outlook(),
-    new GmailAdapter(
+    new GmailAdapter( 'Mercado Libre',
         new Gmail()
     ),
-    new YahooAdapter(
+    new YahooAdapter( 'Juan Ramirez','12-10-21',
         new Yahoo()
     )
 ];
